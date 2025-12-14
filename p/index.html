@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فهرس المحتويات</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: 'Traditional Arabic', 'Arabic Typesetting', 'Simplified Arabic', Arial, sans-serif;
+            line-height: 2;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 2.5cm;
+            background: white;
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .toc-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+        
+        .toc-section {
+            margin-bottom: 25px;
+        }
+        
+        .toc-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .toc-main-text {
+            flex: 1;
+            text-align: right;
+        }
+        
+        .toc-dots {
+            flex: 1;
+            border-bottom: 1px dotted #333;
+            margin: 0 10px 5px 10px;
+            min-width: 50px;
+        }
+        
+        .toc-page {
+            min-width: 40px;
+            text-align: left;
+        }
+        
+        .toc-sub {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-right: 30px;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .toc-sub-text {
+            flex: 1;
+            text-align: right;
+        }
+        
+        .toc-subsub {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-right: 60px;
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+        
+        .toc-subsub-text {
+            flex: 1;
+            text-align: right;
+        }
+        
+        input[type="text"] {
+            width: 45px;
+            border: none;
+            border-bottom: 1px solid #999;
+            text-align: center;
+            font-family: 'Traditional Arabic', Arial, sans-serif;
+            font-size: inherit;
+            padding: 2px;
+            direction: ltr;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-bottom: 2px solid #0066cc;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 12px 24px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            font-family: 'Traditional Arabic', Arial, sans-serif;
+        }
+        
+        .print-button:hover {
+            background: #0052a3;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .print-button {
+                display: none;
+            }
+            
+            input[type="text"] {
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">🖨️ طباعة / حفظ PDF</button>
+    
+    <div class="toc-title">فهرس المحتويات</div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">الملخص</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">1. المقدمة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.1 أهمية البحث العلمي في التعليم العام</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.2 التحول الرقمي في التعليم وأهمية المنصات التعليمية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.3 مشكلة الدراسة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.4 الحل المقترح: منصة "رفيق الباحث" الرقمية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.5 أهمية الدراسة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.6 أهداف الدراسة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.7 أسئلة الدراسة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">2. الإطار النظري والدراسات السابقة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">2.1 المفاهيم الأساسية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.1.1 مهارات البحث العلمي</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.1.2 المنصات التعليمية الرقمية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.1.3 أتمتة البحث العلمي</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">2.2 الدراسات السابقة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.2.1 دراسات حول استخدام التعليم الإلكتروني في تنمية مهارات البحث العلمي</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.2.2 دراسات حول بيئات التعلم التشاركية الرقمية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.2.3 دراسات حول استراتيجيات تدريسية مبتكرة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.2.4 دراسات حول تجارب دولية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.2.5 دراسات حول دور الذكاء الاصطناعي وروبوتات الدردشة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">2.3 التعليق على الدراسات السابقة والفجوة البحثية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">3. المنهجية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.1 منهج الدراسة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.2 مجتمع الدراسة وعينتها</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.3 الوصف التقني للمنصة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">3.3.1 التقنيات المستخدمة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">3.3.2 الميزات الوظيفية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.4 أداة الدراسة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.5 صدق وثبات الأداة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.6 إجراءات تطبيق الدراسة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.7 المعالجة الإحصائية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">4. النتائج</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">4.1 نتائج السؤال الأول</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.1.1 الطريقة المعتادة لإنجاز البحوث</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.1.2 التحديات القبلية في كتابة البحث العلمي</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">4.2 نتائج السؤال الثاني</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">4.3 نتائج السؤال الثالث</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.1 اختصار الوقت والجهد</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.2 فهم ترتيب وتسلسل عناصر البحث</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.3 سهولة أداة مولد المراجع APA</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.4 ميزة الإرسال المباشر للمعلم</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.5 احترافية شكل البحث النهائي</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.6 تحسن المهارات البحثية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.7 التوصية بتعميم المنصة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.8 ربط النتائج بالمقارنة بين عامين</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.9 المتوسط الكلي للفاعلية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">4.4 نتائج السؤال الرابع</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">5. المناقشة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">5.1 مناقشة النتائج وتفسيرها</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">5.1.1 لماذا نجحت منصة "رفيق الباحث"؟</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">5.1.2 معالجة التحديات القبلية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">5.1.3 الأثر الموضوعي: من 48.3% إلى 89.8%</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">5.2 مقارنة النتائج بالدراسات السابقة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">5.2.1 الاتفاق مع الدراسات السابقة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">5.2.2 الاختلاف مع بعض الدراسات</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">5.3 الإسهامات النظرية والتطبيقية</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">5.4 محددات الدراسة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">6. الخاتمة والتوصيات</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">6.1 خلاصة الدراسة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">6.2 التوصيات</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">6.2.1 توصيات لصانعي القرار التربوي</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">6.2.2 توصيات للمعلمين والمشرفين التربويين</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">6.2.3 توصيات لمطوري المنصة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">6.2.4 توصيات للباحثين</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">6.3 الخاتمة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">المراجع</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">الملاحق</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">ملحق (1): الاستبانة المستخدمة في الدراسة</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">ملحق (2): لقطات شاشة من منصة "رفيق الباحث"</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+
+</body>
+</html>}
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .print-button {
+                display: none;
+            }
+            
+            input[type="text"] {
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">🖨️ Print / Save PDF</button>
+    
+    <div class="toc-title">Table of Contents</div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">Abstract</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">1. Introduction</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.1 The Importance of Scientific Research in General Education</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.2 Digital Transformation in Education and the Importance of Educational Platforms</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.3 Research Problem</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.4 Proposed Solution: The "Research Companion" Digital Platform</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.5 Significance of the Study</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.6 Study Objectives</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">1.7 Study Questions</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">2. Theoretical Framework and Literature Review</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">2.1 Basic Concepts</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.1.1 Scientific Research Skills</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.1.2 Digital Educational Platforms</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.1.3 Scientific Research Automation</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">2.2 Previous Studies</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.2.1 Studies on Using E-Learning in Developing Scientific Research Skills</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.2.2 Studies on Digital Collaborative Learning Environments</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.2.3 Studies on Innovative Teaching Strategies</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.2.4 Studies on International Experiences</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">2.2.5 Studies on AI and Chatbots</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">2.3 Commentary on Previous Studies and Research Gap</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">3. Methodology</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.1 Research Approach</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.2 Study Population and Sample</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.3 Technical Description of the Platform</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">3.3.1 Technologies Used</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">3.3.2 Functional Features</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.4 Study Instrument</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.5 Validity and Reliability of the Instrument</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.6 Study Implementation Procedures</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">3.7 Statistical Treatment</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">4. Results</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">4.1 Results of the First Question</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.1.1 Usual Method for Completing Research</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.1.2 Pre-intervention Challenges</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">4.2 Results of the Second Question</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">4.3 Results of the Third Question</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.1 Saving Time and Effort</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.2 Understanding Arrangement and Sequence</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.3 Ease of APA Reference Generator Tool</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.4 Direct Submission to Teacher Feature</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.5 Professionalism of Final Research Format</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.6 Improvement in Research Skills</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.7 Recommendation to Generalize</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.8 Linking Results to Comparison Between Two Years</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">4.3.9 Overall Mean for Effectiveness</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">4.4 Results of the Fourth Question</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">5. Discussion</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">5.1 Discussion and Interpretation of Results</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">5.1.1 Why Did the Platform Succeed?</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">5.1.2 Addressing Pre-intervention Challenges</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">5.1.3 Objective Impact: From 48.3% to 89.8%</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">5.2 Comparison of Results with Previous Studies</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">5.2.1 Agreement with Previous Studies</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">5.2.2 Difference from Some Studies</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">5.3 Theoretical and Practical Contributions</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">5.4 Study Limitations</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">6. Conclusion and Recommendations</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">6.1 Study Summary</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">6.2 Recommendations</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">6.2.1 For Educational Decision Makers</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">6.2.2 For Teachers and Educational Supervisors</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">6.2.3 For Platform Developers</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-subsub">
+            <span class="toc-subsub-text">6.2.4 For Researchers</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">6.3 Conclusion</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">References</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+    
+    <div class="toc-section">
+        <div class="toc-main">
+            <span class="toc-main-text">Appendices</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">Appendix (1): Study Questionnaire</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+        <div class="toc-sub">
+            <span class="toc-sub-text">Appendix (2): Platform Screenshots</span>
+            <span class="toc-dots"></span>
+            <span class="toc-page"><input type="text" placeholder="__"></span>
+        </div>
+    </div>
+
+</body>
+</html>
